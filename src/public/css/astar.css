@@ -1,0 +1,599 @@
+@font-face {
+    font-family: 'Crimson';
+    src: url(../fonts/Crimson_Text/CrimsonText-Roman.ttf);
+}
+@font-face {
+    font-family: 'Source Sans Pro xl';
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-ExtraLight.ttf);
+}
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url(../fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf);
+}
+
+body,html{
+    min-width: 800px;
+    min-height: 600px;
+    width:100%;
+    height:100%;
+}
+body
+{
+    font-size: 16px;
+    font-family: 'Source Sans Pro xl';
+    background-color: #ffffff;
+}
+#bg-cover
+{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Header *********************************************************************/
+#title
+{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 50px;
+    padding: 10px 20px 10px 0;
+    background-color: transparent;
+    /*border-bottom: solid #C4C4C4 1px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
+}
+.logo
+{
+    width: 200px;
+    font-family: serif;
+    font-size: 2.3em;
+    /*color: #8C1515;*/
+    float: left;
+    margin: -5px 10px 0 30px;
+    display: block;
+    /*border-right: solid #C4C4C4 1px;*/
+}
+button
+{
+    outline: none !important;
+}
+
+/*form ----------------------*/
+.form
+{
+    padding: 0;
+    display: none;
+    /*margin: 0 auto;*/
+}
+.form .tbox
+{
+    font-size: 1.3em;
+    color: #222222;
+    background-color: #ffffff;
+    float: left;
+    resize: none;
+
+    /*
+    color: #FFF1D5;
+    background-color: #002F6D;
+     */
+}
+.form .tbox:focus
+{
+    box-shadow: 0 0 3px #0062E4;
+}
+::-webkit-input-placeholder {
+   text-align: center;
+   color: rgba(0,0,0,0.3);
+   /*
+   color: #63A7FF;
+   */
+}
+.form .add
+{
+    width: 50px;
+    color: #8C1515;
+    background-color: transparent;
+    padding-top:4px;   /* fine adjustment */
+    border:none;
+    float: left;
+    margin-left: -50px; 
+}
+.form .add:hover
+{
+    color: #000000;
+}
+.form .add:active
+{
+    box-shadow: none;
+}
+
+/*toolbar ------------------------------------------*/
+.bt4
+{
+    background-color: white;
+    border: solid rgba(0,0,0,0.2) 1px;
+}
+.bt4:hover
+{
+    background-color: rgba(0,0,0,0.1);
+}
+.btn-g1
+{
+    display: none;
+}
+.btn-toolbar
+{
+    float: right;
+}
+.menu-item
+{
+    color: black;
+    padding: 0 10px;
+    cursor: default;
+}
+.menu-item:hover
+{
+    color: white;
+    background-color: #3c77d4;
+}
+.tag-edit
+{
+    position: absolute;
+    z-index: 2000;
+    width: 200px;
+    height: 100px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.tool-btn
+{
+    width: 40px;
+    height:35px;
+    padding: 6px;
+    border: solid #C4C4C4 1px;
+    border-radius: 10%;
+    text-align: center;
+    display: none;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+}
+.tool-btn:hover
+{
+    background-color: #DCDCDC;
+}
+
+/* functino buttons ---------------------------------------------------*/
+.plus
+{
+    width: 30px;
+    color: #000000;
+    padding: 0;
+    background-color: transparent;
+    opacity: 0.2;
+    border:none;
+}
+.plus:hover
+{
+    color: #8C1515;
+    opacity: 1;
+}
+.plus:active
+{
+    box-shadow: none;
+}
+
+.minus
+{
+    opacity: 0;
+    width: 25px;
+    padding: 0;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+.minus:hover
+{
+    opacity: 1;
+    color: #8C1515;
+}
+.minus:active
+{
+    box-shadow: none;
+}
+
+.date-edit
+{
+    color: black;
+    position: absolute;
+    width: 280px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.edit-month
+{
+    width: 65px;
+    margin: 3px;
+}
+
+.edit-time
+{
+    width: 45px;
+    margin: 3px;
+}
+.edit-allday
+{
+    margin: 3px;
+}
+
+input:disabled
+{
+    opacity: 0.5;
+}
+
+.ui-datepicker
+{
+ font-size:13px;
+}
+
+.colorpicker
+{
+    float: left;
+    width: 25px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.h-line{
+    margin: 0 0 3px 0;
+}
+
+/*side menu****************************************************************/
+#sideMenu
+{
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    height: 100%;
+    width: 200px;
+    padding-top: 70px;
+    padding-left: 20px;
+    background: white;
+    font-family: 'Source Sans Pro';
+    background-color: transparent;
+    /*border-right: solid #C4C4C4 1px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
+    overflow: scroll;
+
+}
+
+#notebooks
+{
+
+}
+.m-item
+{
+    padding-left: 10px;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    /*border-bottom: 2px solid #C4C4C4;*/
+}
+.m-notes
+{
+    padding: 0;
+    margin-top: 10px;
+    list-style: none;
+}
+.m-note
+{
+    padding-left: 10px; 
+    cursor: pointer;
+}
+
+
+/*main****************************************************/
+#main
+{
+    position: fixed;
+    top: 50px;
+    left: 200px;
+    background: transparent;
+    /* width and height set by JS */
+}
+#og-grid
+{
+    height: 100%;
+    width: 100%;
+    display: none;
+    overflow: scroll;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+#og-grid li {
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    vertical-align: top;
+}
+
+/*note****************************************************/
+.note
+{
+
+}
+.note-name
+{
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+}
+.note-cover
+{
+    display: block;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.lg-cover
+{
+    display: block;
+    width: 400px;
+}
+.note-setting
+{
+    width: 30px;
+    display: none;
+    position: relative;
+    top: 170px;
+    left: 170px;
+    padding: 3px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+}
+.note-cover:hover > .note-setting
+{
+    display: block;
+}
+
+#setting
+{
+    padding: 5px 20px;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow: auto;
+}
+.config-title
+{
+    font-weight: bold;
+}
+.config-name
+{
+    font-size: 1.5em;
+    width: 300px;
+}
+.config-label
+{
+    font-size: 1em;
+    margin-right: 20px;
+}
+.config-close
+{
+    position: relative;
+    top: 10px;
+    left: 0;
+    float: right;
+    z-index: 2500;
+    cursor: pointer;
+}
+.config-delete
+{
+    width: 150px;
+    height: 35px;
+    padding: 5px;
+    color: #8C1515;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #C4C4C4;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.config-delete:hover
+{
+    color: #ffffff;
+    background-color: #8C1515;
+}
+
+/* step ****************************************************/
+.allstep
+{
+    opacity: 0.1;
+    width: 20px;
+}
+.step
+{
+    width: 20px;
+    height: 25px;
+    background-image: url("../img/step20.png");
+    cursor: pointer;
+    opacity: 0.1;
+}
+.step:hover
+{
+    opacity: 0.5;
+}
+.step.marked, .allstep.marked, .allstep2.marked
+{
+    opacity: 1;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.allstep2
+{
+    margin: 5px;
+    width: 20px;
+    opacity: 0.3;
+}
+
+.step-date
+{
+    cursor: pointer;
+}
+
+
+/*list ****************************************************/
+.panel
+{
+    color: black;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+}
+.list
+{
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+    font-size: 1.2em;
+}
+
+.step-color{
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    float: left;
+    margin: 7px 2px 0 0;
+}
+
+/* table ---*/
+.mytable{
+    width: 100%;
+}
+.mytable thead th
+{
+    background-color: rgba(255,255,255,0.8);
+    border-bottom: 1px solid #C4C4C4;
+}
+.mytable table, .mytable th{
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.mytable th{
+    padding: 5px;
+    vertical-align: center;
+}
+
+.list input[type="text"]
+{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+/* chunk****************************************************/
+#chunk
+{
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow: auto;
+    /*background: rgba(255,255,255,0.5);*/
+}
+
+#chunk input[type="text"]
+{
+    background-color: transparent;
+    border: none;
+}
+#chunk .mytable2 input[type="text"]
+{
+    width: 100%;
+}
+
+.tag
+{
+    height: 340px;
+    border: 1px solid rgba(0,0,0,0.2);
+    margin: 10px;
+    padding: 5px;
+    background-color: rgba(255,255,255,0.8);
+    float: left;
+}
+.tagname
+{
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: center;
+}
+.edit-tagname
+{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.table-wrapper{
+    width: 100%;
+    height: 270px;
+    overflow: scroll;
+}
+
+.step-bg
+{
+    display: none;
+    position: relative;
+    top: -220px;
+    left: 0px;
+    z-index: 1000;
+    margin: 0 auto;
+    width: 175px;
+    height: 160px;
+    background-image: url("../img/dog_paw.png");
+    /* src ../img/dog_paw.png, top -220px, size 175px x 160px*/
+    /* src ../img/FootStepWellDone.png, top -300px, size 220px x 330px*/
+
+    background-size: cover;
+    -webkit-transform: rotate(10deg);
+}
+
+.mytable2{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.mytable2 table, .mytable2 th{
+    border-bottom: 2px solid rgba(255,255,255,0.4);
+}
+.mytable2 th{
+    padding-left: 4px;
+    vertical-align: center;
+}
+
+/* calendar ****************************************************/
+#calendar
+{
+    color: black;
+    display: none;
+    background-color: white;
+    padding: 10px;
+    background: rgba(255,255,255,0.8);
+}
+

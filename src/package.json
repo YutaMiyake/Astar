@@ -1,0 +1,15 @@
+{
+  "main": "public/index.html",
+  "name": "Astar",
+  "description": "Simple Task Manager App",
+  "version": "0.1.0",
+  "window": {
+    "title": "Astar",
+    "icon": "nw.icns",
+    "toolbar": false,
+    "frame": true,
+    "width": 1028,
+    "height": 768,
+    "position": "mouse"
+  }
+}

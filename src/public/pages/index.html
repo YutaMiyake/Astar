@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>
+                AStar
+            </title>
+            <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <link rel="stylesheet" href="css/bootstrap.min.css" />
+            <script src="app.js"></script>
+            <script src="js/jquery-1.11.3.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+
+            <style type="text/css">
+            @import url(http://fonts.googleapis.com/css?family=Libre+Baskerville);body,html{font-size:16px}.title h1{font-family:'Libre Baskerville',serif;font-size:5em;color:#e22}.item{border-width:0 0 2px 0;font-size:1em;border-color:#000;margin:10px}.item:focus{outline:none !important}.bt{font-size:1em;border-radius:0;height:2em;width:6em;margin:10px -70px 0 0}.nav a{color:#5a5a5a;font-size:11px;font-weight:bold;padding:14px 10px;text-transform:uppercase}.nav li{display:inline}.btn{outline:none !important}
+            </style>
+
+            <script type="text/javascript">
+            $(document).ready(function(){const b=$(".btn-group .btn");const a=$(".bt1");a.addClass("active");b.click(function(){b.removeClass("active");$(this).addClass("active")})});
+            </script>
+
+        </head>
+        <body>
+            <div class="container">
+                <div class="nav nav-tabs">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                    <li><a href="#">Log In</a></li>
+                    <li><a href="#">Help</a></li>
+                </div>
+            </div>
+            <div class="container title">
+                <h1>A*</h1>
+                <div class="btn-group pull-right btn-group-lg" role="group">
+                    <button type="button" class="btn btn-default bt1" aria-label="Left Align">
+                        <span class="glyphicon glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default bt2" aria-label="Left Align">
+                        <span class="glyphicon glyphicon glyphicon-th" aria-hidden="true"></span>
+                    </button>
+                    <button type="button" class="btn btn-default bt3" aria-label="Left Align">
+                        <span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    </button>
+                </div>
+
+            </div>
+            <div class="container slide">
+                <h1>Add whatever you want</h1>
+                <p>ToDos, milestones, future goals, memo...</p>
+                <div class="row">
+                    <span class="label label-default col-xs-6 col-md-6 item">Thing</span>
+                    <span class="label label-primary col-xs-2 col-md-2 item">Class</span>
+                    <span class="label label-success col-xs-2 col-md-2 item">Date</span>
+                </div>
+                <div class="row">
+                    <input  autofocus class = "col-xs-6 col-md-6 item" name="thing" maxlength="100" type="text" />
+                    <input  class = "col-xs-2 col-md-2 item" name="class" maxlength="20" type="text" />
+                    <input  class = "col-xs-2 col-md-2 item" name="date" maxlength="10" type="text" />
+                </div>
+                <div class="row">
+                    <input  autofocus class = "col-xs-6 col-md-6 item" name="thing" maxlength="100" type="text" />
+                    <input  class = "col-xs-2 col-md-2 item" name="class" maxlength="20" type="text" />
+                    <input  class = "col-xs-2 col-md-2 item" name="date" maxlength="10" type="text" />
+                </div>
+                <div class="row">
+                    <input  autofocus class = "col-xs-6 col-md-6 item" name="thing" maxlength="100" type="text" />
+                    <input  class = "col-xs-2 col-md-2 item" name="class" maxlength="20" type="text" />
+                    <input  class = "col-xs-2 col-md-2 item" name="date" maxlength="10" type="text" />
+                </div>
+                <div class="row">
+                    <div class="col-xs-10 col-md-10">
+                        <button class="bt btn btn-primary pull-right" type="submit">Add</button>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>

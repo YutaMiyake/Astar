@@ -1,0 +1,124 @@
+<head>
+  <meta charset="utf-8">
+  <title>Setting</title>
+
+  <script src="lib/jquery-1.11.3.min.js"></script>
+  <script src="js/app.js"></script>
+
+</head>
+
+<style type="text/css">
+body
+{
+  width: 500px;
+  height: 300px;
+  background-color: #f2f2f2;
+}
+#preview img
+{
+  width: 200px;
+  height: auto;
+}
+</style>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  var win = gui.Window.get().focus();
+
+  var exts = {
+    "image/gif": "gif",
+    "image/jpeg": "jpg",
+    "image/png": "png",
+    "image/tiff": "tif tiff",
+    "image/vnd.wap.wbmp": "wbmp",
+    "image/x-icon": "ico",
+    "image/x-jng": "jng",
+    "image/x-ms-bmp": "bmp",
+    "image/svg+xml": "svg",
+    "image/webp": "webp"
+  };
+
+  // background image change
+  $('#fileDialog').change(function(){
+          console.log("photo file has been chosen");
+          renderImage(this.files[0]);
+      });
+  // background color change
+  $('#btn-save').click(function(){
+          console.log("color has been chosen");
+          writeFile("color",$('#colorpicker').val());
+      });
+
+  // functions ********************************************************
+  function humanFileSize(bytes, si) {
+      var thresh = si ? 1000 : 1024;
+      if(bytes < thresh) return bytes + ' B';
+      var units = si ? ['kB','MB','GB','TB','PB','EB','ZB','YB'] : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
+      var u = -1;
+      do {
+          bytes /= thresh;
+          ++u;
+      } while(bytes >= thresh);
+      return bytes.toFixed(1)+' '+units[u];
+  }
+
+  function renderImage(file){
+      var reader = new FileReader();
+      reader.onload = function(event){
+            the_url = event.target.result;
+            $('#preview').html("<img src='"+the_url+"' />");
+            $('#name').html(file.name);
+            $('#size').html(humanFileSize(file.size, "MB"));
+            $('#type').html(file.type);
+
+            writeFile("image",the_url);
+        }
+        reader.readAsDataURL(file);
+    }
+
+  function writeFile(bgtype, data){
+    var cfg = readConfig();
+      if (bgtype === "image")
+      {
+        var data_index = data.indexOf('base64') + 7;
+        var type = data.slice(5,data_index-8);
+        var filedata = data.slice(data_index, data.length);
+        var buffer = new Buffer(filedata, 'base64')
+        deleteFile(cfg["bg-path"]);
+        var bgDir = cfgPath+"/"+(+new Date)+"."+exts[type];
+        fs.writeFileSync(bgDir, buffer);
+        cfg["bg-path"] = bgDir;
+        cfg["bg-type"] = "image";
+        localStorage.setItem("bgSetting", "image"); 
+        writeAppFiles("config",cfg);
+      }
+      else if (bgtype === "color")
+      {
+        cfg["bg-color"] = data;
+        cfg["bg-type"] = "color";
+        localStorage.setItem("bgSetting", "color"); 
+        writeAppFiles("config",cfg);
+      }
+    }
+
+});
+</script>
+<body>
+  <div>
+      <h3>Background image:</h3>
+      <input type="file" id="fileDialog">
+      <div id="preview" > <!--image will be inserted here--></div>
+      <div id="data">
+          <h3 id="name"></h3>
+          <p id="size"></p>
+          <p id="type"></p>
+      </div>
+  </div>
+  <form >
+    <h3>Background color</h3>
+    <input id="colorpicker" type="color" name="favcolor" value="#8C1515">
+    <input id="btn-save" type="button" value="save">
+  </form>
+</body>
