@@ -409,12 +409,10 @@ var Astar = (function(){
 
              if(tags[step.tag].marked === tags[step.tag].steps)
              {
-                 //$tag.find('.allstep2').addClass('marked');
                  $tag.find('.step-bg').show();
              }
              else
              {
-                 //$tag.find('.allstep2').removeClass('marked');
                  $tag.find('.step-bg').hide();
              }
        }
@@ -1237,7 +1235,7 @@ var Astar = (function(){
                 $('#'+tag+' tbody tr:nth-child('+index+')').css("background-color","rgba(0,0,0,0.2)");
             }
 
-            if (tags[tagname].marked >  tags[tagname].steps)
+            if (tags[tagname].marked < tags[tagname].steps)
             {
                 //$("#"+tag).find('.allstep2').removeClass('marked');
                 $("#"+tag).find('.step-bg').hide();
