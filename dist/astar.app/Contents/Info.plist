@@ -50,9 +50,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>41.0.2272.76</string>
+	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>2272.76</string>
+	<string>1.0.0</string>
 	<key>DTSDKBuild</key>
 	<string>12F37</string>
 	<key>DTSDKName</key>
