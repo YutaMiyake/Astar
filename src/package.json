@@ -2,7 +2,7 @@
   "main": "public/index.html",
   "name": "Astar",
   "description": "Simple Task Manager App",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "window": {
     "title": "Astar",
     "icon": "nw.icns",
